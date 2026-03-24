@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FollowCrips — Prix les plus bas du marché</title>
+<title>FollowCrips â Prix les plus bas du marchÃ©</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
 <style>
 :root{--bg:#080a0f;--bg2:#0d1017;--card:#111620;--border:rgba(255,255,255,0.06);--accent:#00f5a0;--accent2:#00c9ff;--text:#e8edf5;--muted:#6b7a99}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -238,11 +239,11 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
 
 <!-- PROMO BANNER -->
 <div class="promo-bar" id="promo-bar">
-  <span>⚡ OFFRE LIMITÉE — Commande en moins de 15 minutes et utilise le code</span>
+  <span>â¡ OFFRE LIMITÃE â Commande en moins de 15 minutes et utilise le code</span>
   <span class="promo-code" onclick="copyCode()" title="Cliquer pour copier" id="promo-code-btn">FOLLOWCRIPS10</span>
   <span>pour <strong>-10%</strong> sur ta commande</span>
-  <span class="promo-timer" id="promo-timer">⏳ 14:59</span>
-  <button class="promo-close" onclick="closeBanner()">×</button>
+  <span class="promo-timer" id="promo-timer">â³ 14:59</span>
+  <button class="promo-close" onclick="closeBanner()">Ã</button>
 </div>
 
 <nav id="main-nav">
@@ -250,50 +251,50 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#calc">Calculateur</a></li>
-    <li><a href="#how">Comment ça marche</a></li>
+    <li><a href="#how">Comment Ã§a marche</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#services" class="nav-cta">Commander →</a></li>
+    <li><a href="#services" class="nav-cta">Commander â</a></li>
   </ul>
-  <button class="cart-btn" onclick="openCart()">🛒 Panier <span class="cart-count" id="cart-count">0</span></button>
+  <button class="cart-btn" onclick="openCart()">ð Panier <span class="cart-count" id="cart-count">0</span></button>
 </nav>
 
 <div class="hero">
   <div class="hero-glow"></div><div class="hero-glow2"></div>
-  <div class="badge"><span class="dot"></span> Prix garantis les plus bas du marché</div>
-  <h1>BOOST TON<br><span>INFLUENCE</span><br>PAS TES DÉPENSES</h1>
-  <p class="hero-sub">Abonnés Instagram, TikTok, YouTube — <strong>jusqu'à 15x moins cher</strong> que la concurrence. Livraison rapide, SAV 7j/7 24h/24, garantie de remplacement.</p>
+  <div class="badge"><span class="dot"></span> Prix garantis les plus bas du marchÃ©</div>
+  <h1>BOOST TON<br><span>INFLUENCE</span><br>PAS TES DÃPENSES</h1>
+  <p class="hero-sub">AbonnÃ©s Instagram, TikTok, YouTube â <strong>jusqu'Ã  15x moins cher</strong> que la concurrence. Livraison rapide, SAV 7j/7 24h/24, garantie de remplacement.</p>
   <div class="hero-btns">
     <a href="#services" class="btn-primary">Voir les offres</a>
     <a href="#calc" class="btn-secondary">Calculer mon prix</a>
   </div>
   <div class="stats-bar">
-    <div class="stat"><div class="stat-val">+12 400</div><div class="stat-label">Commandes livrées</div></div>
+    <div class="stat"><div class="stat-val">+12 400</div><div class="stat-label">Commandes livrÃ©es</div></div>
     <div class="stat"><div class="stat-val">15x</div><div class="stat-label">Moins cher que la concurrence</div></div>
     <div class="stat"><div class="stat-val">24/7</div><div class="stat-label">Support actif</div></div>
-    <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Garanti ou remboursé</div></div>
+    <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Garanti ou remboursÃ©</div></div>
   </div>
 </div>
 
 <div class="trust">
-  <div class="trust-item">🔒 Paiement 100% sécurisé</div>
-  <div class="trust-item">⚡ Livraison en moins de 24h</div>
-  <div class="trust-item">🔄 Garantie remplacement 30 jours</div>
-  <div class="trust-item">💬 SAV 7j/7 24h/24</div>
-  <div class="trust-item">🏆 Prix les plus bas du marché</div>
+  <div class="trust-item">ð Paiement 100% sÃ©curisÃ©</div>
+  <div class="trust-item">â¡ Livraison en moins de 24h</div>
+  <div class="trust-item">ð Garantie remplacement 30 jours</div>
+  <div class="trust-item">ð¬ SAV 7j/7 24h/24</div>
+  <div class="trust-item">ð Prix les plus bas du marchÃ©</div>
 </div>
 
 <!-- SOCIAL PROOF -->
 <div class="sp-wrap">
   <div class="sp-inner">
-    <div class="live-bar"><span class="live-dot"></span><span class="live-num" id="live-n">247</span>&nbsp;commandes livrées aujourd'hui — rejoins-les maintenant</div>
-    <h2 class="sp-head">ILS ONT DÉJÀ <span>BOOSTÉ</span> LEUR COMPTE</h2>
+    <div class="live-bar"><span class="live-dot"></span><span class="live-num" id="live-n">247</span>&nbsp;commandes livrÃ©es aujourd'hui â rejoins-les maintenant</div>
+    <h2 class="sp-head">ILS ONT DÃJÃ <span>BOOSTÃ</span> LEUR COMPTE</h2>
     <div class="reviews-grid">
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#f09433,#dc2743)">L</div><div><div class="rc-name">Lucas M.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg> Instagram · 5 000 followers</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">Livraison en 3h, j'ai pris 5000 abonnés pour 12€. Sur les autres sites c'était 75€ minimum. Incroyable rapport qualité/prix.</div></div>
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#69C9D0,#EE1D52)">S</div><div><div class="rc-name">Sarah K.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path d="M19 8.5c-1-.4-1.8-1.1-2.2-2.1l-.1-.4h-2.3v10.2c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.2 0 .4 0 .6.1V12c-.2 0-.4-.1-.6-.1-2.4 0-4.4 2-4.4 4.4s2 4.4 4.4 4.4 4.4-2 4.4-4.4V11c.9.6 2 1 3.2 1V9.8z" fill="url(#tt-g)"/></svg> TikTok · 10 000 followers</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">Mon compte TikTok a explosé. Le suivi est impeccable et le prix imbattable. Ailleurs j'aurais payé 10x plus cher.</div></div>
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#FF0000,#cc0000)">A</div><div><div class="rc-name">Alex T.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><polygon points="9.5,7 17,12 9.5,17" fill="white"/></svg> YouTube · 2 500 abonnés</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">Stats d'engagement stables, livraison en 5h. La garantie de remplacement est vraiment là. Je reviens déjà pour une 2e commande.</div></div>
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#f09433,#dc2743)">M</div><div><div class="rc-name">Manon D.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><path d="M12 18s-7-4.5-7-8.5a4 4 0 0 1 7-2.6A4 4 0 0 1 19 9.5c0 4-7 8.5-7 8.5z" fill="white"/></svg> Instagram · 1 000 likes</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">Mes posts passent en explore maintenant. J'ai eu de vrais followers organiques en plus. Merci FollowCrips !</div></div>
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#69C9D0,#EE1D52)">R</div><div><div class="rc-name">Romain V.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><polygon points="9,7 19,12 9,17" fill="url(#tt-g)"/></svg> TikTok · 500 000 vues</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">500k vues pour moins de 28€, là où d'autres demandent 200€+. Mon contenu a été mis en avant automatiquement.</div></div>
-      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">C</div><div><div class="rc-name">Clara B.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg> Instagram · 25 000 followers</div></div></div><div class="rc-stars">★★★★★</div><div class="rc-text">25k abonnés pour 33€, inimaginable ailleurs (j'avais eu un devis à 480€ chez un concurrent). SAV ultra réactif.</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#f09433,#dc2743)">L</div><div><div class="rc-name">Lucas M.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg> Instagram Â· 5 000 followers</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">Livraison en 3h, j'ai pris 5000 abonnÃ©s pour 12â¬. Sur les autres sites c'Ã©tait 75â¬ minimum. Incroyable rapport qualitÃ©/prix.</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#69C9D0,#EE1D52)">S</div><div><div class="rc-name">Sarah K.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><path d="M19 8.5c-1-.4-1.8-1.1-2.2-2.1l-.1-.4h-2.3v10.2c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.2 0 .4 0 .6.1V12c-.2 0-.4-.1-.6-.1-2.4 0-4.4 2-4.4 4.4s2 4.4 4.4 4.4 4.4-2 4.4-4.4V11c.9.6 2 1 3.2 1V9.8z" fill="url(#tt-g)"/></svg> TikTok Â· 10 000 followers</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">Mon compte TikTok a explosÃ©. Le suivi est impeccable et le prix imbattable. Ailleurs j'aurais payÃ© 10x plus cher.</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#FF0000,#cc0000)">A</div><div><div class="rc-name">Alex T.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#FF0000"/><polygon points="9.5,7 17,12 9.5,17" fill="white"/></svg> YouTube Â· 2 500 abonnÃ©s</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">Stats d'engagement stables, livraison en 5h. La garantie de remplacement est vraiment lÃ . Je reviens dÃ©jÃ  pour une 2e commande.</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#f09433,#dc2743)">M</div><div><div class="rc-name">Manon D.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><path d="M12 18s-7-4.5-7-8.5a4 4 0 0 1 7-2.6A4 4 0 0 1 19 9.5c0 4-7 8.5-7 8.5z" fill="white"/></svg> Instagram Â· 1 000 likes</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">Mes posts passent en explore maintenant. J'ai eu de vrais followers organiques en plus. Merci FollowCrips !</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#69C9D0,#EE1D52)">R</div><div><div class="rc-name">Romain V.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#000"/><polygon points="9,7 19,12 9,17" fill="url(#tt-g)"/></svg> TikTok Â· 500 000 vues</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">500k vues pour moins de 28â¬, lÃ  oÃ¹ d'autres demandent 200â¬+. Mon contenu a Ã©tÃ© mis en avant automatiquement.</div></div>
+      <div class="rc"><div class="rc-top"><div class="rc-av" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">C</div><div><div class="rc-name">Clara B.</div><div class="rc-plat"><svg width="13" height="13" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg> Instagram Â· 25 000 followers</div></div></div><div class="rc-stars">âââââ</div><div class="rc-text">25k abonnÃ©s pour 33â¬, inimaginable ailleurs (j'avais eu un devis Ã  480â¬ chez un concurrent). SAV ultra rÃ©actif.</div></div>
     </div>
   </div>
 </div>
@@ -329,30 +330,30 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
     const q=qty>=1000000?(qty/1000000)+'M':qty.toLocaleString('fr');
     const rawPrice=parseFloat(price.replace(',','.'));
     return `<div class="pc${pop?' pop':''}">
-      ${pop?'<div class="pop-badge">⭐ Populaire</div>':''}
+      ${pop?'<div class="pop-badge">â­ Populaire</div>':''}
       <div class="pc-icon"><svg viewBox="0 0 24 24" width="28" height="28">${ICONS[iconKey]}</svg></div>
       <div class="pc-qty">${q}</div><div class="pc-svc">${svc}</div>
       <div class="pc-price">${price}</div>
       ${save?`<div class="pc-save">${save}</div>`:''}
-      <button class="btn-ord btn-cart" onclick="addToCart('${q}','${svc}','${price}','${plat}','${svcKey}',${rawPrice})">🛒 Ajouter au panier</button>
-      <button class="btn-ord" style="margin-top:6px;background:transparent;border-color:rgba(255,255,255,0.1);color:var(--muted);font-size:12px" onclick="om('${q} ${svc}','${price}','${plat}','${svcKey}')">Commander directement →</button>
+      <button class="btn-ord btn-cart" onclick="addToCart('${q}','${svc}','${price}','${plat}','${svcKey}',${rawPrice})">ð Ajouter au panier</button>
+      <button class="btn-ord" style="margin-top:6px;background:transparent;border-color:rgba(255,255,255,0.1);color:var(--muted);font-size:12px" onclick="om('${q} ${svc}','${price}','${plat}','${svcKey}')">Commander directement â</button>
     </div>`;
   }
   </script>
 
-  <div class="pp active" id="ig-f"><script>document.write([[500,'2,99€','Concurrents : <strong>~45€</strong>',false],[1000,'4,99€','Concurrents : <strong>~80€</strong>',false],[2500,'7,99€','+2 000 pour seulement +3€ 🔥',false],[5000,'11,99€','+2 500 pour seulement +4€ 🔥',true],[10000,'18,99€','+5 000 pour seulement +7€ 🔥',false],[25000,'32,99€','+15 000 pour seulement +14€ 🔥',false],[50000,'54,99€','+25 000 pour seulement +22€ 🔥',false],[100000,'89,99€','+50 000 pour seulement +35€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Followers Instagram',p,s,pop,'igF','ig','ig-f')).join(''));</script></div>
-  <div class="pp" id="ig-l"><script>document.write([[500,'1,99€','',false],[1000,'2,99€','+500 pour seulement +1€ 🔥',false],[2500,'4,99€','',false],[5000,'7,99€','+2 500 pour seulement +3€ 🔥',true],[10000,'12,99€','+5 000 pour seulement +5€ 🔥',false],[25000,'22,99€','',false],[50000,'37,99€','',false],[100000,'59,99€','+50 000 pour seulement +22€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Likes Instagram',p,s,pop,'igL','ig','ig-l')).join(''));</script></div>
-  <div class="pp" id="ig-v"><script>document.write([[5000,'0,99€','',false],[10000,'1,49€','+5 000 pour seulement +0,50€ 🔥',false],[50000,'4,99€','',false],[100000,'7,99€','+50 000 pour seulement +3€ 🔥',true],[250000,'14,99€','',false],[500000,'22,99€','+250 000 pour seulement +8€ 🔥',false],[1000000,'34,99€','+500 000 pour seulement +12€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Vues Instagram',p,s,pop,'igV','ig','ig-v')).join(''));</script></div>
-  <div class="pp" id="tt-f"><script>document.write([[500,'3,49€','',false],[1000,'5,49€','+500 pour seulement +2€ 🔥',false],[2500,'9,49€','',false],[5000,'14,99€','+2 500 pour seulement +5,50€ 🔥',true],[10000,'22,99€','',false],[25000,'39,99€','',false],[50000,'64,99€','',false],[100000,'109,99€','+50 000 pour seulement +45€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Followers TikTok',p,s,pop,'ttF','tt','tt-f')).join(''));</script></div>
-  <div class="pp" id="tt-l"><script>document.write([[500,'1,49€','',false],[1000,'2,29€','+500 pour seulement +0,80€ 🔥',false],[2500,'3,99€','',false],[5000,'6,49€','+2 500 pour seulement +2,50€ 🔥',true],[10000,'9,99€','',false],[25000,'16,99€','',false],[50000,'27,99€','',false],[100000,'44,99€','',false]].map(([q,p,s,pop])=>mkCard(q,'Likes TikTok',p,s,pop,'ttL','tt','tt-l')).join(''));</script></div>
-  <div class="pp" id="tt-v"><script>document.write([[5000,'0,99€','',false],[10000,'1,79€','+5 000 pour seulement +0,80€ 🔥',false],[50000,'5,99€','',false],[100000,'9,99€','+50 000 pour seulement +4€ 🔥',true],[250000,'19,99€','',false],[500000,'27,99€','+250 000 pour seulement +8€ 🔥',false],[1000000,'44,99€','',false],[5000000,'174,99€','',false],[10000000,'299,99€','+5M pour seulement +125€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Vues TikTok',p,s,pop,'ttV','tt','tt-v')).join(''));</script></div>
-  <div class="pp" id="yt"><script>document.write([[500,'2,49€','',false],[1000,'3,99€','+500 pour seulement +1,50€ 🔥',false],[2500,'6,99€','',false],[5000,'11,99€','+2 500 pour seulement +5€ 🔥',true],[10000,'19,99€','',false],[25000,'34,99€','',false],[50000,'54,99€','',false],[100000,'89,99€','+50 000 pour seulement +35€ 🔥',false]].map(([q,p,s,pop])=>mkCard(q,'Abonnés YouTube',p,s,pop,'yt','yt','yt')).join(''));</script></div>
+  <div class="pp active" id="ig-f"><script>document.write([[500,'2,99â¬','Concurrents : <strong>~45â¬</strong>',false],[1000,'4,99â¬','Concurrents : <strong>~80â¬</strong>',false],[2500,'7,99â¬','+2 000 pour seulement +3â¬ ð¥',false],[5000,'11,99â¬','+2 500 pour seulement +4â¬ ð¥',true],[10000,'18,99â¬','+5 000 pour seulement +7â¬ ð¥',false],[25000,'32,99â¬','+15 000 pour seulement +14â¬ ð¥',false],[50000,'54,99â¬','+25 000 pour seulement +22â¬ ð¥',false],[100000,'89,99â¬','+50 000 pour seulement +35â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'Followers Instagram',p,s,pop,'igF','ig','ig-f')).join(''));</script></div>
+  <div class="pp" id="ig-l"><script>document.write([[500,'1,99â¬','',false],[1000,'2,99â¬','+500 pour seulement +1â¬ ð¥',false],[2500,'4,99â¬','',false],[5000,'7,99â¬','+2 500 pour seulement +3â¬ ð¥',true],[10000,'12,99â¬','+5 000 pour seulement +5â¬ ð¥',false],[25000,'22,99â¬','',false],[50000,'37,99â¬','',false],[100000,'59,99â¬','+50 000 pour seulement +22â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'Likes Instagram',p,s,pop,'igL','ig','ig-l')).join(''));</script></div>
+  <div class="pp" id="ig-v"><script>document.write([[5000,'0,99â¬','',false],[10000,'1,49â¬','+5 000 pour seulement +0,50â¬ ð¥',false],[50000,'4,99â¬','',false],[100000,'7,99â¬','+50 000 pour seulement +3â¬ ð¥',true],[250000,'14,99â¬','',false],[500000,'22,99â¬','+250 000 pour seulement +8â¬ ð¥',false],[1000000,'34,99â¬','+500 000 pour seulement +12â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'Vues Instagram',p,s,pop,'igV','ig','ig-v')).join(''));</script></div>
+  <div class="pp" id="tt-f"><script>document.write([[500,'3,49â¬','',false],[1000,'5,49â¬','+500 pour seulement +2â¬ ð¥',false],[2500,'9,49â¬','',false],[5000,'14,99â¬','+2 500 pour seulement +5,50â¬ ð¥',true],[10000,'22,99â¬','',false],[25000,'39,99â¬','',false],[50000,'64,99â¬','',false],[100000,'109,99â¬','+50 000 pour seulement +45â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'Followers TikTok',p,s,pop,'ttF','tt','tt-f')).join(''));</script></div>
+  <div class="pp" id="tt-l"><script>document.write([[500,'1,49â¬','',false],[1000,'2,29â¬','+500 pour seulement +0,80â¬ ð¥',false],[2500,'3,99â¬','',false],[5000,'6,49â¬','+2 500 pour seulement +2,50â¬ ð¥',true],[10000,'9,99â¬','',false],[25000,'16,99â¬','',false],[50000,'27,99â¬','',false],[100000,'44,99â¬','',false]].map(([q,p,s,pop])=>mkCard(q,'Likes TikTok',p,s,pop,'ttL','tt','tt-l')).join(''));</script></div>
+  <div class="pp" id="tt-v"><script>document.write([[5000,'0,99â¬','',false],[10000,'1,79â¬','+5 000 pour seulement +0,80â¬ ð¥',false],[50000,'5,99â¬','',false],[100000,'9,99â¬','+50 000 pour seulement +4â¬ ð¥',true],[250000,'19,99â¬','',false],[500000,'27,99â¬','+250 000 pour seulement +8â¬ ð¥',false],[1000000,'44,99â¬','',false],[5000000,'174,99â¬','',false],[10000000,'299,99â¬','+5M pour seulement +125â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'Vues TikTok',p,s,pop,'ttV','tt','tt-v')).join(''));</script></div>
+  <div class="pp" id="yt"><script>document.write([[500,'2,49â¬','',false],[1000,'3,99â¬','+500 pour seulement +1,50â¬ ð¥',false],[2500,'6,99â¬','',false],[5000,'11,99â¬','+2 500 pour seulement +5â¬ ð¥',true],[10000,'19,99â¬','',false],[25000,'34,99â¬','',false],[50000,'54,99â¬','',false],[100000,'89,99â¬','+50 000 pour seulement +35â¬ ð¥',false]].map(([q,p,s,pop])=>mkCard(q,'AbonnÃ©s YouTube',p,s,pop,'yt','yt','yt')).join(''));</script></div>
 </section>
 
 <!-- CALCULATOR -->
 <div class="calc-bg" id="calc">
   <section>
-    <div class="sec-hdr"><div class="sec-tag">Calculateur</div><h2 class="sec-title">CALCULE TON PRIX</h2><p class="sec-sub">Entre la quantité que tu veux et obtiens ton prix instantanément.</p></div>
+    <div class="sec-hdr"><div class="sec-tag">Calculateur</div><h2 class="sec-title">CALCULE TON PRIX</h2><p class="sec-sub">Entre la quantitÃ© que tu veux et obtiens ton prix instantanÃ©ment.</p></div>
     <div class="calc-box">
       <div class="calc-row">
         <div class="cf"><label>Service</label>
@@ -360,14 +361,14 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
             <option value="ig-f">Instagram Followers</option><option value="ig-l">Instagram Likes</option>
             <option value="ig-v">Instagram Vues</option><option value="tt-f">TikTok Followers</option>
             <option value="tt-l">TikTok Likes</option><option value="tt-v">TikTok Vues</option>
-            <option value="yt">YouTube Abonnés</option>
+            <option value="yt">YouTube AbonnÃ©s</option>
           </select>
         </div>
-        <div class="cf"><label>Quantité souhaitée</label><input type="number" id="c-qty" value="1000" min="100" oninput="cp()"></div>
+        <div class="cf"><label>QuantitÃ© souhaitÃ©e</label><input type="number" id="c-qty" value="1000" min="100" oninput="cp()"></div>
       </div>
       <div class="calc-res">
-        <div><div class="res-lbl">Prix estimé pour ta commande</div><div class="res-price" id="r-price">—</div><div class="res-note" id="r-note"></div></div>
-        <button class="btn-primary" onclick="ocalc()">Commander ce pack →</button>
+        <div><div class="res-lbl">Prix estimÃ© pour ta commande</div><div class="res-price" id="r-price">â</div><div class="res-note" id="r-note"></div></div>
+        <button class="btn-primary" onclick="ocalc()">Commander ce pack â</button>
       </div>
     </div>
   </section>
@@ -375,12 +376,12 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
 
 <!-- HOW -->
 <section id="how">
-  <div class="sec-hdr"><div class="sec-tag">Processus</div><h2 class="sec-title">COMMENT ÇA MARCHE</h2><p class="sec-sub">Simple, rapide, efficace.</p></div>
+  <div class="sec-hdr"><div class="sec-tag">Processus</div><h2 class="sec-title">COMMENT ÃA MARCHE</h2><p class="sec-sub">Simple, rapide, efficace.</p></div>
   <div class="steps">
-    <div class="step"><div class="step-n">01</div><h3>Choisis ton offre</h3><p>Sélectionne la plateforme et le pack. Plus tu commandes, plus tu économises.</p></div>
-    <div class="step"><div class="step-n">02</div><h3>Entre le lien de ton profil</h3><p>Colle l'URL de ton compte. Aucun mot de passe demandé — jamais. Zéro risque.</p></div>
-    <div class="step"><div class="step-n">03</div><h3>Paye en toute sécurité</h3><p>Paiement sécurisé SSL 128 bits. Carte bancaire ou crypto acceptés.</p></div>
-    <div class="step"><div class="step-n">04</div><h3>Livraison garantie</h3><p>Ton boost démarre dans les 24h. Garantie de remplacement 30 jours incluse.</p></div>
+    <div class="step"><div class="step-n">01</div><h3>Choisis ton offre</h3><p>SÃ©lectionne la plateforme et le pack. Plus tu commandes, plus tu Ã©conomises.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>Entre le lien de ton profil</h3><p>Colle l'URL de ton compte. Aucun mot de passe demandÃ© â jamais. ZÃ©ro risque.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>Paye en toute sÃ©curitÃ©</h3><p>Paiement sÃ©curisÃ© SSL 128 bits. Carte bancaire ou crypto acceptÃ©s.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>Livraison garantie</h3><p>Ton boost dÃ©marre dans les 24h. Garantie de remplacement 30 jours incluse.</p></div>
   </div>
 </section>
 
@@ -388,11 +389,11 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
   <section id="faq">
     <div class="sec-hdr"><div class="sec-tag">FAQ</div><h2 class="sec-title">TES QUESTIONS</h2></div>
     <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Est-ce que c'est sécurisé pour mon compte ? <span class="arr">+</span></button><div class="faq-a">Oui. Nous n'avons jamais accès à ton mot de passe. Nous utilisons uniquement le lien public de ton profil pour livrer ta commande. Zéro risque de bannissement.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Pourquoi vos prix sont si bas ? <span class="arr">+</span></button><div class="faq-a">On travaille directement avec des fournisseurs en gros sans intermédiaire. Nos concurrents prennent des marges énormes — nous, on préfère des prix honnêtes et fidéliser nos clients.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Combien de temps prend la livraison ? <span class="arr">+</span></button><div class="faq-a">Le boost démarre généralement dans les 1 à 6 heures suivant la confirmation de paiement. Livraison complète en 24-48h selon la taille de la commande.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Que se passe-t-il si je perds des abonnés après ? <span class="arr">+</span></button><div class="faq-a">Garantie de remplacement de 30 jours. Si une partie de ta commande disparaît, on te relivrera sans aucun frais supplémentaires.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Quels moyens de paiement acceptez-vous ? <span class="arr">+</span></button><div class="faq-a">Cartes bancaires (Visa, Mastercard) et crypto-monnaie (USDT, BTC). Tous les paiements sont traités via des prestataires conformes PCI-DSS avec chiffrement SSL.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Est-ce que c'est sÃ©curisÃ© pour mon compte ? <span class="arr">+</span></button><div class="faq-a">Oui. Nous n'avons jamais accÃ¨s Ã  ton mot de passe. Nous utilisons uniquement le lien public de ton profil pour livrer ta commande. ZÃ©ro risque de bannissement.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Pourquoi vos prix sont si bas ? <span class="arr">+</span></button><div class="faq-a">On travaille directement avec des fournisseurs en gros sans intermÃ©diaire. Nos concurrents prennent des marges Ã©normes â nous, on prÃ©fÃ¨re des prix honnÃªtes et fidÃ©liser nos clients.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Combien de temps prend la livraison ? <span class="arr">+</span></button><div class="faq-a">Le boost dÃ©marre gÃ©nÃ©ralement dans les 1 Ã  6 heures suivant la confirmation de paiement. Livraison complÃ¨te en 24-48h selon la taille de la commande.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Que se passe-t-il si je perds des abonnÃ©s aprÃ¨s ? <span class="arr">+</span></button><div class="faq-a">Garantie de remplacement de 30 jours. Si une partie de ta commande disparaÃ®t, on te relivrera sans aucun frais supplÃ©mentaires.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="tf(this)">Quels moyens de paiement acceptez-vous ? <span class="arr">+</span></button><div class="faq-a">Cartes bancaires (Visa, Mastercard) et crypto-monnaie (USDT, BTC). Tous les paiements sont traitÃ©s via des prestataires conformes PCI-DSS avec chiffrement SSL.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="tf(this)">Le code promo FOLLOWCRIPS10 fonctionne comment ? <span class="arr">+</span></button><div class="faq-a">Entre le code FOLLOWCRIPS10 dans le champ "code promo" lors de ta commande pour obtenir -10% sur le total. Le code est valable sur toutes les offres sans minimum d'achat.</div></div>
     </div>
   </section>
@@ -400,20 +401,20 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
 
 <footer>
   <div class="ft-logo">FollowCrips</div>
-  <p style="margin-bottom:8px">Prix les plus bas du marché — SAV 7j/7 24h/24 — Livraison garantie</p>
-  <p>© 2025 FollowCrips — Tous droits réservés</p>
+  <p style="margin-bottom:8px">Prix les plus bas du marchÃ© â SAV 7j/7 24h/24 â Livraison garantie</p>
+  <p>Â© 2025 FollowCrips â Tous droits rÃ©servÃ©s</p>
 </footer>
 
 <!-- ORDER MODAL -->
 <div class="mo" id="mo" onclick="cm(event)">
   <div class="md">
-    <button class="md-close" onclick="cm()">✕</button>
+    <button class="md-close" onclick="cm()">â</button>
     <h2>COMMANDER</h2>
     <p class="md-sub">Remplis les infos ci-dessous pour finaliser ta commande</p>
     <div class="md-sum">
-      <div class="sr"><span>Service</span><strong id="ms">—</strong></div>
-      <div class="sr"><span>Quantité</span><strong id="mq">—</strong></div>
-      <div class="sr tot"><span>Total</span><strong id="mp">—</strong></div>
+      <div class="sr"><span>Service</span><strong id="ms">â</strong></div>
+      <div class="sr"><span>QuantitÃ©</span><strong id="mq">â</strong></div>
+      <div class="sr tot"><span>Total</span><strong id="mp">â</strong></div>
     </div>
     <div class="ff">
       <label id="plbl">Lien du profil</label>
@@ -421,7 +422,7 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
       <div class="help" id="phlp"></div>
     </div>
     <div class="ff" id="post-f" style="display:none">
-      <label id="post-lbl">Lien du post / de la vidéo</label>
+      <label id="post-lbl">Lien du post / de la vidÃ©o</label>
       <input type="url" id="post-i" placeholder="https://...">
       <div class="help" id="post-h"></div>
     </div>
@@ -437,15 +438,15 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
       </div>
       <div class="promo-msg" id="promo-msg"></div>
     </div>
-    <button class="btn-primary" style="width:100%;margin-top:8px;padding:14px" onclick="cm()">Procéder au paiement 🔒</button>
-    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">🔒 Paiement sécurisé SSL — Aucun mot de passe requis</p>
+    <button class="btn-primary" style="width:100%;margin-top:8px;padding:14px" onclick="cm()">ProcÃ©der au paiement ð</button>
+    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px">ð Paiement sÃ©curisÃ© SSL â Aucun mot de passe requis</p>
   </div>
 </div>
 
 <!-- CART MODAL -->
 <div class="cart-mo" id="cart-mo" onclick="if(event.target===this)closeCart()">
   <div class="cart-md">
-    <button class="md-close" onclick="closeCart()">✕</button>
+    <button class="md-close" onclick="closeCart()">â</button>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:32px;margin-bottom:6px">MON PANIER</h2>
     <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Chaque article a son propre lien de profil</p>
     <div id="cart-items-wrap"></div>
@@ -458,8 +459,8 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
       </div>
       <div class="cart-promo-msg" id="cart-promo-msg"></div>
       <div id="cart-totals"></div>
-      <button class="btn-primary" style="width:100%;padding:14px;margin-top:12px" onclick="closeCart()">Procéder au paiement 🔒</button>
-      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px">🔒 Paiement sécurisé SSL — Aucun mot de passe requis</p>
+      <button class="btn-primary" style="width:100%;padding:14px;margin-top:12px" onclick="closeCart()">ProcÃ©der au paiement ð</button>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px">ð Paiement sÃ©curisÃ© SSL â Aucun mot de passe requis</p>
     </div>
   </div>
 </div>
@@ -474,26 +475,26 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
 
 <div class="sav-win" id="sav-win">
   <div class="sav-head">
-    <div class="sav-avatar">🤖</div>
+    <div class="sav-avatar">ð¤</div>
     <div>
       <div class="sav-name">Support FollowCrips</div>
       <div class="sav-status"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block"></span> En ligne maintenant</div>
     </div>
-    <button class="sav-close" onclick="toggleSav()">×</button>
+    <button class="sav-close" onclick="toggleSav()">Ã</button>
   </div>
   <div class="sav-msgs" id="sav-msgs">
-    <div class="msg bot">👋 Bonjour ! Je suis le support FollowCrips. Comment puis-je vous aider aujourd'hui ?</div>
+    <div class="msg bot">ð Bonjour ! Je suis le support FollowCrips. Comment puis-je vous aider aujourd'hui ?</div>
   </div>
   <div class="sav-quick" id="sav-quick">
-    <button class="qbtn" onclick="quickQ(this,'Prix et offres')">💰 Prix et offres</button>
-    <button class="qbtn" onclick="quickQ(this,'Délai de livraison')">⚡ Délai livraison</button>
-    <button class="qbtn" onclick="quickQ(this,'Sécurité du compte')">🔒 Sécurité</button>
-    <button class="qbtn" onclick="quickQ(this,'Code promo')">🎁 Code promo</button>
-    <button class="qbtn" onclick="quickQ(this,'Garantie')">🔄 Garantie</button>
-    <button class="qbtn" onclick="quickQ(this,'Parler à un humain')">👤 Contacter le support</button>
+    <button class="qbtn" onclick="quickQ(this,'Prix et offres')">ð° Prix et offres</button>
+    <button class="qbtn" onclick="quickQ(this,'DÃ©lai de livraison')">â¡ DÃ©lai livraison</button>
+    <button class="qbtn" onclick="quickQ(this,'SÃ©curitÃ© du compte')">ð SÃ©curitÃ©</button>
+    <button class="qbtn" onclick="quickQ(this,'Code promo')">ð Code promo</button>
+    <button class="qbtn" onclick="quickQ(this,'Garantie')">ð Garantie</button>
+    <button class="qbtn" onclick="quickQ(this,'Parler Ã  un humain')">ð¤ Contacter le support</button>
   </div>
   <div class="sav-input-row">
-    <input class="sav-input" id="sav-inp" placeholder="Écris ta question..." onkeydown="if(event.key==='Enter')sendMsg()">
+    <input class="sav-input" id="sav-inp" placeholder="Ãcris ta question..." onkeydown="if(event.key==='Enter')sendMsg()">
     <button class="sav-send" onclick="sendMsg()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
@@ -501,7 +502,7 @@ footer{border-top:1px solid var(--border);padding:40px;text-align:center;color:v
 </div>
 
 <script>
-// ── PRICING ──
+// ââ PRICING ââ
 const PX={
   'ig-f':[[500,2.99],[1000,4.99],[2500,7.99],[5000,11.99],[10000,18.99],[25000,32.99],[50000,54.99],[100000,89.99]],
   'ig-l':[[500,1.99],[1000,2.99],[2500,4.99],[5000,7.99],[10000,12.99],[25000,22.99],[50000,37.99],[100000,59.99]],
@@ -512,9 +513,9 @@ const PX={
   'yt':[[500,2.49],[1000,3.99],[2500,6.99],[5000,11.99],[10000,19.99],[25000,34.99],[50000,54.99],[100000,89.99]]
 };
 const PH={ig:'https://www.instagram.com/moncompte',tt:'https://www.tiktok.com/@moncompte',yt:'https://www.youtube.com/@monchannel'};
-const PL={ig:'Lien du profil Instagram',tt:'Lien du profil TikTok',yt:'Lien de la chaîne YouTube'};
+const PL={ig:'Lien du profil Instagram',tt:'Lien du profil TikTok',yt:'Lien de la chaÃ®ne YouTube'};
 const POST_PH={ig:{l:'https://www.instagram.com/p/XXXXXX',v:'https://www.instagram.com/reel/XXXXXX'},tt:{l:'https://www.tiktok.com/@pseudo/video/XXXXXX',v:'https://www.tiktok.com/@pseudo/video/XXXXXX'}};
-const POST_LBL={ig:{l:'Lien du post Instagram à liker',v:'Lien du Reel Instagram'},tt:{l:'Lien de la vidéo TikTok à liker',v:'Lien de la vidéo TikTok'}};
+const POST_LBL={ig:{l:'Lien du post Instagram Ã  liker',v:'Lien du Reel Instagram'},tt:{l:'Lien de la vidÃ©o TikTok Ã  liker',v:'Lien de la vidÃ©o TikTok'}};
 const NEEDS_POST=['ig-l','ig-v','tt-l','tt-v'];
 
 function interp(k,qty){
@@ -527,18 +528,18 @@ function interp(k,qty){
 function cp(){
   const k=document.getElementById('c-svc').value,qty=parseInt(document.getElementById('c-qty').value)||0;
   const pe=document.getElementById('r-price'),ne=document.getElementById('r-note');
-  if(!qty||qty<100){pe.textContent='—';ne.textContent='';return;}
-  const v=interp(k,qty);if(!v){pe.textContent='—';return;}
+  if(!qty||qty<100){pe.textContent='â';ne.textContent='';return;}
+  const v=interp(k,qty);if(!v){pe.textContent='â';return;}
   const r=Math.round(v*100)/100;
-  pe.textContent=r.toFixed(2).replace('.',',')+' €';
-  ne.textContent='Soit '+(r/qty*1000).toFixed(3).replace('.',',')+'€ pour 1 000 unités';
+  pe.textContent=r.toFixed(2).replace('.',',')+' â¬';
+  ne.textContent='Soit '+(r/qty*1000).toFixed(3).replace('.',',')+'â¬ pour 1 000 unitÃ©s';
 }
 function ocalc(){
   const k=document.getElementById('c-svc').value,qty=parseInt(document.getElementById('c-qty').value)||0;
   const v=interp(k,qty);if(!v)return;
   const r=Math.round(v*100)/100,plat=k.startsWith('ig')?'ig':k.startsWith('tt')?'tt':'yt';
-  const labels={'ig-f':'Followers Instagram','ig-l':'Likes Instagram','ig-v':'Vues Instagram','tt-f':'Followers TikTok','tt-l':'Likes TikTok','tt-v':'Vues TikTok','yt':'Abonnés YouTube'};
-  om(qty.toLocaleString('fr')+' '+labels[k],r.toFixed(2).replace('.',',')+' €',plat,k);
+  const labels={'ig-f':'Followers Instagram','ig-l':'Likes Instagram','ig-v':'Vues Instagram','tt-f':'Followers TikTok','tt-l':'Likes TikTok','tt-v':'Vues TikTok','yt':'AbonnÃ©s YouTube'};
+  om(qty.toLocaleString('fr')+' '+labels[k],r.toFixed(2).replace('.',',')+' â¬',plat,k);
 }
 function st(id,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -573,7 +574,7 @@ function om(svc,price,plat,svcKey){
 function cm(e){if(!e||e.target===document.getElementById('mo'))document.getElementById('mo').classList.remove('open');}
 function tf(b){b.parentElement.classList.toggle('open');}
 
-// ── PROMO CODE (modal commande directe) ──
+// ââ PROMO CODE (modal commande directe) ââ
 let currentRawPrice=0;
 let promoApplied=false;
 
@@ -583,23 +584,23 @@ function applyPromo(){
   if(v==='FOLLOWCRIPS10'){
     promoApplied=true;
     const discounted=(currentRawPrice*0.9).toFixed(2).replace('.',',');
-    document.getElementById('mp').textContent=discounted+'€';
+    document.getElementById('mp').textContent=discounted+'â¬';
     // show discount line
     let dl=document.getElementById('mp-discount');
     if(!dl){
       const sum=document.querySelector('.md-sum');
       dl=document.createElement('div');dl.id='mp-discount';dl.className='sr discount-line';
-      dl.innerHTML='<span>Réduction FOLLOWCRIPS10 (-10%)</span><strong>-'+((currentRawPrice*0.1).toFixed(2).replace('.',','))+'€</strong>';
+      dl.innerHTML='<span>RÃ©duction FOLLOWCRIPS10 (-10%)</span><strong>-'+((currentRawPrice*0.1).toFixed(2).replace('.',','))+'â¬</strong>';
       sum.insertBefore(dl,sum.lastElementChild);
     }
-    msg.className='promo-msg ok';msg.textContent='✅ -10% appliqué !';
+    msg.className='promo-msg ok';msg.textContent='â -10% appliquÃ© !';
   } else {
     promoApplied=false;
-    msg.className='promo-msg err';msg.textContent='❌ Code invalide. Essaie FOLLOWCRIPS10.';
+    msg.className='promo-msg err';msg.textContent='â Code invalide. Essaie FOLLOWCRIPS10.';
   }
 }
 
-// ── CART SYSTEM ──
+// ââ CART SYSTEM ââ
 let cart=[];
 let cartPromoApplied=false;
 
@@ -627,14 +628,14 @@ function removeFromCart(id){
 
 const PH_CART={ig:'https://www.instagram.com/moncompte',tt:'https://www.tiktok.com/@moncompte',yt:'https://www.youtube.com/@monchannel'};
 const POST_PH_CART={ig:{likes:'https://www.instagram.com/p/XXXXXX',vues:'https://www.instagram.com/reel/XXXXXX'},tt:{likes:'https://www.tiktok.com/@pseudo/video/XXXXXX',vues:'https://www.tiktok.com/@pseudo/video/XXXXXX'}};
-const PL_CART={ig:'Lien du profil Instagram',tt:'Lien du profil TikTok',yt:'Lien de la chaîne YouTube'};
-const POST_LBL_CART={ig:{likes:'Lien du post à liker',vues:'Lien du Reel'},tt:{likes:'Lien de la vidéo à liker',vues:'Lien de la vidéo'}};
+const PL_CART={ig:'Lien du profil Instagram',tt:'Lien du profil TikTok',yt:'Lien de la chaÃ®ne YouTube'};
+const POST_LBL_CART={ig:{likes:'Lien du post Ã  liker',vues:'Lien du Reel'},tt:{likes:'Lien de la vidÃ©o Ã  liker',vues:'Lien de la vidÃ©o'}};
 
 function renderCart(){
   const wrap=document.getElementById('cart-items-wrap');
   const sec=document.getElementById('cart-checkout-section');
   if(cart.length===0){
-    wrap.innerHTML='<div class="cart-empty">🛒 Ton panier est vide.<br><br>Ajoute des services depuis les offres ci-dessous.</div>';
+    wrap.innerHTML='<div class="cart-empty">ð Ton panier est vide.<br><br>Ajoute des services depuis les offres ci-dessous.</div>';
     sec.style.display='none';return;
   }
   sec.style.display='block';
@@ -650,7 +651,7 @@ function renderCart(){
         </div>
         <div style="display:flex;align-items:center;gap:8px">
           <span class="cart-item-price">${item.price}</span>
-          <button class="cart-item-del" onclick="removeFromCart(${item.id})">✕ Retirer</button>
+          <button class="cart-item-del" onclick="removeFromCart(${item.id})">â Retirer</button>
         </div>
       </div>
       <label class="cart-url-label">${profileLbl}</label>
@@ -669,9 +670,9 @@ function renderTotals(){
   const disc=cartPromoApplied?sub*0.1:0;
   const total=sub-disc;
   document.getElementById('cart-totals').innerHTML=`
-    <div class="cart-row"><span>Sous-total</span><strong>${sub.toFixed(2).replace('.',',')} €</strong></div>
-    ${disc>0?`<div class="cart-row discount-line"><span>Réduction FOLLOWCRIPS10 (-10%)</span><strong>-${disc.toFixed(2).replace('.',',')} €</strong></div>`:''}
-    <div class="cart-row final"><span>Total</span><strong>${total.toFixed(2).replace('.',',')} €</strong></div>
+    <div class="cart-row"><span>Sous-total</span><strong>${sub.toFixed(2).replace('.',',')} â¬</strong></div>
+    ${disc>0?`<div class="cart-row discount-line"><span>RÃ©duction FOLLOWCRIPS10 (-10%)</span><strong>-${disc.toFixed(2).replace('.',',')} â¬</strong></div>`:''}
+    <div class="cart-row final"><span>Total</span><strong>${total.toFixed(2).replace('.',',')} â¬</strong></div>
   `;
 }
 
@@ -680,10 +681,10 @@ function applyCartPromo(){
   const msg=document.getElementById('cart-promo-msg');
   if(v==='FOLLOWCRIPS10'){
     cartPromoApplied=true;
-    msg.className='cart-promo-msg ok';msg.textContent='✅ Code valide ! -10% appliqué sur le total.';
+    msg.className='cart-promo-msg ok';msg.textContent='â Code valide ! -10% appliquÃ© sur le total.';
   } else {
     cartPromoApplied=false;
-    msg.className='cart-promo-msg err';msg.textContent='❌ Code invalide. Essaie FOLLOWCRIPS10.';
+    msg.className='cart-promo-msg err';msg.textContent='â Code invalide. Essaie FOLLOWCRIPS10.';
   }
   renderTotals();
 }
@@ -691,14 +692,14 @@ function applyCartPromo(){
 function openCart(){renderCart();document.getElementById('cart-mo').classList.add('open');}
 function closeCart(){document.getElementById('cart-mo').classList.remove('open');}
 
-// ── PROMO BANNER TIMER ──
+// ââ PROMO BANNER TIMER ââ
 let bannerTime=14*60+59;
 const timerEl=document.getElementById('promo-timer');
 const btimer=setInterval(()=>{
   bannerTime--;
   if(bannerTime<=0){bannerTime=0;clearInterval(btimer);}
   const m=Math.floor(bannerTime/60),s=bannerTime%60;
-  timerEl.textContent=`⏳ ${m}:${String(s).padStart(2,'0')}`;
+  timerEl.textContent=`â³ ${m}:${String(s).padStart(2,'0')}`;
 },1000);
 function closeBanner(){
   document.getElementById('promo-bar').style.display='none';
@@ -707,34 +708,34 @@ function closeBanner(){
 function copyCode(){
   navigator.clipboard.writeText('FOLLOWCRIPS10').then(()=>{
     const b=document.getElementById('promo-code-btn');
-    const orig=b.textContent;b.textContent='✓ Copié !';
+    const orig=b.textContent;b.textContent='â CopiÃ© !';
     setTimeout(()=>b.textContent=orig,2000);
   });
 }
 
-// ── LIVE COUNTER ──
+// ââ LIVE COUNTER ââ
 let lc=247;
 setInterval(()=>{if(Math.random()>.4){lc+=Math.floor(Math.random()*3)+1;document.getElementById('live-n').textContent=lc;}},4000);
 
-// ── SAV CHATBOT ──
+// ââ SAV CHATBOT ââ
 const SAV_KB={
-  'prix':['Nos prix sont les plus bas du marché, jusqu\'à 15x moins chers que la concurrence !\n\n📸 Instagram Followers : à partir de 2,99€ (500 followers)\n🎵 TikTok Followers : à partir de 3,49€ (500 followers)\n▶️ YouTube Abonnés : à partir de 2,49€ (500 abonnés)\n👁️ TikTok Vues : à partir de 0,99€ (5 000 vues)\n\nUtilise le calculateur sur le site pour un prix exact !'],
-  'livraison':['⚡ La livraison démarre généralement dans les 1 à 6 heures après confirmation du paiement.\n\nLa livraison complète peut prendre 24 à 48h selon la taille de la commande. Tu recevras une confirmation par e-mail dès que c\'est parti !'],
-  'sécurité':['🔒 Ton compte est 100% sécurisé.\n\nNous n\'avons jamais besoin de ton mot de passe — seulement le lien public de ton profil. Nos méthodes respectent les limites des plateformes pour minimiser tout risque.'],
-  'garantie':['🔄 Nous offrons une garantie de remplacement de 30 jours.\n\nSi une partie de ta commande disparaît dans ce délai, on te relivrera gratuitement sans aucune question. Ta satisfaction est notre priorité !'],
-  'promo':['🎁 Utilise le code FOLLOWCRIPS10 lors de ta commande pour obtenir -10% sur le total !\n\nLe code est valable sur toutes les offres, sans minimum d\'achat. Il te suffit de l\'entrer dans le champ "Code promo" dans le formulaire de commande.'],
-  'paiement':['💳 Nous acceptons :\n• Cartes bancaires (Visa, Mastercard)\n• Crypto-monnaie (USDT, BTC)\n\nTous les paiements sont sécurisés SSL 128 bits et traités par des prestataires conformes PCI-DSS.'],
-  'humain':['👤 Tu souhaites parler à un humain ?\n\nNotre équipe est disponible 7j/7 24h/24. Tu peux nous contacter directement par e-mail à : support@followcrips.com\n\nNous répondons en général en moins de 2 heures !'],
-  'default':['Je ne suis pas sûr de bien comprendre ta question 😅\n\nTu peux reformuler ou choisir une question rapide ci-dessous. Sinon, notre équipe est dispo 7j/7 par e-mail : support@followcrips.com']
+  'prix':['Nos prix sont les plus bas du marchÃ©, jusqu\'Ã  15x moins chers que la concurrence !\n\nð¸ Instagram Followers : Ã  partir de 2,99â¬ (500 followers)\nðµ TikTok Followers : Ã  partir de 3,49â¬ (500 followers)\nâ¶ï¸ YouTube AbonnÃ©s : Ã  partir de 2,49â¬ (500 abonnÃ©s)\nðï¸ TikTok Vues : Ã  partir de 0,99â¬ (5 000 vues)\n\nUtilise le calculateur sur le site pour un prix exact !'],
+  'livraison':['â¡ La livraison dÃ©marre gÃ©nÃ©ralement dans les 1 Ã  6 heures aprÃ¨s confirmation du paiement.\n\nLa livraison complÃ¨te peut prendre 24 Ã  48h selon la taille de la commande. Tu recevras une confirmation par e-mail dÃ¨s que c\'est parti !'],
+  'sÃ©curitÃ©':['ð Ton compte est 100% sÃ©curisÃ©.\n\nNous n\'avons jamais besoin de ton mot de passe â seulement le lien public de ton profil. Nos mÃ©thodes respectent les limites des plateformes pour minimiser tout risque.'],
+  'garantie':['ð Nous offrons une garantie de remplacement de 30 jours.\n\nSi une partie de ta commande disparaÃ®t dans ce dÃ©lai, on te relivrera gratuitement sans aucune question. Ta satisfaction est notre prioritÃ© !'],
+  'promo':['ð Utilise le code FOLLOWCRIPS10 lors de ta commande pour obtenir -10% sur le total !\n\nLe code est valable sur toutes les offres, sans minimum d\'achat. Il te suffit de l\'entrer dans le champ "Code promo" dans le formulaire de commande.'],
+  'paiement':['ð³ Nous acceptons :\nâ¢ Cartes bancaires (Visa, Mastercard)\nâ¢ Crypto-monnaie (USDT, BTC)\n\nTous les paiements sont sÃ©curisÃ©s SSL 128 bits et traitÃ©s par des prestataires conformes PCI-DSS.'],
+  'humain':['ð¤ Tu souhaites parler Ã  un humain ?\n\nNotre Ã©quipe est disponible 7j/7 24h/24. Tu peux nous contacter directement par e-mail Ã  : support@followcrips.com\n\nNous rÃ©pondons en gÃ©nÃ©ral en moins de 2 heures !'],
+  'default':['Je ne suis pas sÃ»r de bien comprendre ta question ð\n\nTu peux reformuler ou choisir une question rapide ci-dessous. Sinon, notre Ã©quipe est dispo 7j/7 par e-mail : support@followcrips.com']
 };
 
 function detect(msg){
   const m=msg.toLowerCase();
-  if(/prix|offre|tarif|combien|coût|cher/.test(m))return'prix';
-  if(/livr|délai|temps|long|rapide|quand/.test(m))return'livraison';
-  if(/sécur|risque|banni|mot de passe|danger/.test(m))return'sécurité';
+  if(/prix|offre|tarif|combien|coÃ»t|cher/.test(m))return'prix';
+  if(/livr|dÃ©lai|temps|long|rapide|quand/.test(m))return'livraison';
+  if(/sÃ©cur|risque|banni|mot de passe|danger/.test(m))return'sÃ©curitÃ©';
   if(/garanti|rembours|perdu|disparu|reemplace/.test(m))return'garantie';
-  if(/promo|code|réduction|discount|coupon/.test(m))return'promo';
+  if(/promo|code|rÃ©duction|discount|coupon/.test(m))return'promo';
   if(/paiement|payer|carte|virement|crypto/.test(m))return'paiement';
   if(/humain|conseiller|agent|contact|email|support/.test(m))return'humain';
   return'default';
@@ -755,7 +756,7 @@ function addMsg(text,type){
 function quickQ(btn,q){
   document.getElementById('sav-quick').style.display='none';
   addMsg(q,'user');
-  const key=q==='Prix et offres'?'prix':q==='Délai de livraison'?'livraison':q==='Sécurité du compte'?'sécurité':q==='Code promo'?'promo':q==='Garantie'?'garantie':'humain';
+  const key=q==='Prix et offres'?'prix':q==='DÃ©lai de livraison'?'livraison':q==='SÃ©curitÃ© du compte'?'sÃ©curitÃ©':q==='Code promo'?'promo':q==='Garantie'?'garantie':'humain';
   setTimeout(()=>addMsg(SAV_KB[key][0],'bot'),200);
 }
 
@@ -775,6 +776,36 @@ function toggleSav(){
   document.querySelector('.sav-notif').style.display='none';
 }
 
+
+// ── STRIPE CONFIG ──
+const STRIPE_PK = 'pk_live_51SnhzUDbW5vkXDvfWxU1jVAhZJT1WBenBvcEBws568xd7kVP7TvvJEHQqMdUDRWnLxKjyPe9mLj5bgiWB6zO1Ram006LLH7aiu';
+const STRIPE_PAYMENT_LINK = 'VOTRE_LIEN_STRIPE'; // Remplace avec ton lien buy.stripe.com/XXXXX
+const stripeInstance = Stripe(STRIPE_PK);
+
+function getStripeUrl(amountEuros) {
+  const cents = Math.round(parseFloat(amountEuros.toString().replace(',','.')) * 100);
+  if (STRIPE_PAYMENT_LINK === 'VOTRE_LIEN_STRIPE') {
+    alert('Configurez votre lien Stripe dans le code (STRIPE_PAYMENT_LINK)');
+    return null;
+  }
+  return STRIPE_PAYMENT_LINK + '?prefilled_amount=' + cents;
+}
+
+// ── STRIPE PAYMENT ──
+function payWithStripe() {
+  const rawPrice = currentRawPrice;
+  const finalPrice = promoApplied ? rawPrice * 0.9 : rawPrice;
+  const url = getStripeUrl(finalPrice);
+  if (url) { window.location.href = url; }
+}
+
+function payCartWithStripe() {
+  if (cart.length === 0) return;
+  const sub = cart.reduce((a,i) => a + i.rawPrice, 0);
+  const total = cartPromoApplied ? sub * 0.9 : sub;
+  const url = getStripeUrl(total);
+  if (url) { window.location.href = url; }
+}
 cp();
 </script>
 </body>
